@@ -1,53 +1,64 @@
-# TcNo Account Switcher Enhanced
+# TcNo Account Switcher Mejorado
 
-This repository is a fork-oriented enhancement workspace for building a stronger, self-updating, batch-update version of the official TcNo Account Switcher.
+Este repositorio es un fork mejorado del TcNo Account Switcher oficial, diseñado como un espacio de trabajo para construir una versión más robusta y con actualizaciones automáticas.
 
-Base release used for alignment:
+**Versión base utilizada:**
 - https://github.com/TCNOco/TcNo-Acc-Switcher/releases/tag/2025-11-20_03
 
-The goal of this fork is to add the following features on top of the upstream app:
+## Objetivo del Fork
 
-- Update the app from inside the app
-- Update all configured accounts in one action
-- Better release validation and rollback safety
-- Cleaner batch-progress reporting and summary
-- Stronger troubleshooting for Epic/Battle.net/Discord/Ubisoft issues
+El propósito de este fork es agregar las siguientes características al aplicativo original:
 
-## Features currently modeled in this repo
+- ✅ **Actualizar la aplicación desde la propia aplicación sin descargar manualmente**
+- ✅ Actualizar todas las cuentas configuradas en una sola acción
+- ✅ Mejor validación de lanzamientos y seguridad de reversión
+- ✅ Reporte de progreso más limpio y resumen consolidado
+- ✅ Solución de problemas mejorada para Epic/Battle.net/Discord/Ubisoft
 
-- `CheckRelease` helper for upstream release validation flow
-- `UpdateAll` batch logic for accounts
-- CLI demo for checking releases and processing all accounts
-- Release-oriented structure suitable for a first public fork
+## Características Modeladas
 
-## Quick start
+- `CheckRelease` - Validación de versiones upstream
+- `UpdateAll` - Lógica de actualización por lotes
+- CLI demo para verificar versiones y procesar todas las cuentas
+- Estructura orientada a lanzamientos, adecuada para un primer fork público
+
+## Inicio Rápido
 
 ```bash
+# Verificar nuevas versiones
 go run . --check-release
 
+# Actualizar todas las cuentas
 go run . --update-all
 ```
 
-## Project structure
+## Estructura del Proyecto
 
-```text
-cmd/                 optional future CLI integration
+```
+cmd/                 Integración CLI futura
 internal/
-  accounts/
-  updatecheck/
-main.go              demo entry point
+  accounts/          Gestión de cuentas
+  updatecheck/       Verificación de actualizaciones
+main.go              Punto de entrada de demo
 README.md
 CHANGELOG.md
 ```
 
-## Release plan
+## Plan de Lanzamiento
 
-1. Align this fork to the latest stable official release.
-2. Add app-internal update flow.
-3. Add `Update All` actions in the UI.
-4. Add release verification and rollback safety.
-5. Publish the first tagged public release.
+1. Alinear este fork con la última versión estable oficial
+2. Agregar flujo de actualización interno en la aplicación (sin necesidad de descargar)
+3. Agregar acciones de "Actualizar Todo" en la interfaz
+4. Agregar verificación de versiones y seguridad de reversión
+5. Publicar el primer lanzamiento etiquetado público
 
-## Notes
+## Créditos
 
-This repository is intentionally structured as a strong enhancement base. It is not the upstream project itself; it is a fork-ready enhancement layer built around the official release.
+**Proyecto Original:**
+- [TcNo Account Switcher](https://github.com/TCNOco/TcNo-Acc-Switcher) - Proyecto original por [TCNOco](https://github.com/TCNOco)
+
+Este fork es un trabajo de mejora basado en el excelente trabajo del equipo de TcNo.
+
+## Notas
+
+Este repositorio está estructurado intencionalmente como una base de mejora robusta. No es el proyecto upstream; es una capa de mejora lista para fork construida alrededor del lanzamiento oficial.
